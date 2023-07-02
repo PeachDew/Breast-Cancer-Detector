@@ -21,8 +21,8 @@ st.markdown("""
 )
 
 #Load the models
-with open("./models/rf_model.pickle", "rb") as file:
-    rf_model = pickle.load(file)
+with open("./models/logreg_model.pickle", "rb") as file:
+    logreg_model = pickle.load(file)
     
        
     
@@ -52,8 +52,8 @@ with col2:
     if pred_button:
         with st.spinner('Wait for it...'):
             data = [[area, text, perim, area, smooth]]
-            prediction = rf_model.predict(data)
-            probabilities = rf_model.predict_proba(data)
+            prediction = logreg_model.predict(data)
+            probabilities = logreg_model.predict_proba(data)
             
             # Display the prediction
             if prediction == 0:
