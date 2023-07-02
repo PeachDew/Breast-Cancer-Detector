@@ -63,8 +63,8 @@ with col2:
                 st.write("The tumor is predicted to be benign.")
             else:
                 st.write("The tumor is predicted to be malignant.")
-            pred_data = {'Probability': ['Benign Probability', 'Malignant Probability'],
-                    'Value': [f'{probabilities[0][0]*100:.5f}%', f'{probabilities[0][1]*100:.5f}%']}
+            pred_data = {'Tumor': ['BENIGN', 'MALIGNANT'],
+                    'Probability': [f'{probabilities[0][0]*100:.5f}%', f'{probabilities[0][1]*100:.5f}%']}
             st.dataframe(pred_data)
             
             
