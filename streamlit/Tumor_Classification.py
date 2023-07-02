@@ -23,6 +23,8 @@ st.markdown("""
 #Load the models
 with open("./models/logreg_model.pkl", "rb") as file:
     logreg_model = pickle.load(file)
+with open("./models/scaler.pkl", "rb") as file:
+    scaler = pickle.load(file)    
     
        
     
@@ -51,10 +53,9 @@ with col2:
     pred_button = st.button('Generate Prediction')
     if pred_button:
         with st.spinner('Wait for it...'):
-            scaler = StandardScaler() 
             data = [[radius, text, perim, area, smooth]]
             st.write(data)
-            scaled_data = scaler.fit_transform(data)
+            scaled_data = scaler.transform(data)
             prediction = logreg_model.predict(scaled_data)
             probabilities = logreg_model.predict_proba(scaled_data)
             
