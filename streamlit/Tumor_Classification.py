@@ -54,8 +54,8 @@ with col2:
     if pred_button:
         with st.spinner('Wait for it...'):
             data = [[radius, text, perim, area, smooth]]
-            st.write(data)
-            scaled_data = scaler.transform(data)
+            df = pd.DataFrame(data, columns=['mean_radius', 'mean_texture', 'mean_perimeter', 'mean_area', 'mean_smoothness'])
+            scaled_data = scaler.transform(df)
             prediction = logreg_model.predict(scaled_data)
             probabilities = logreg_model.predict_proba(scaled_data)
             
