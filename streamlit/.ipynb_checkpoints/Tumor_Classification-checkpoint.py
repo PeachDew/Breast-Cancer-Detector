@@ -29,23 +29,23 @@ with open("./models/scaler.pkl", "rb") as file:
     
 col1, col2 = st.columns(2)
 with col1:
-    area = st.slider('Choose area', min_value=100.0,
+    area = st.slider('Area', min_value=100.0,
                     max_value=3000.0,
                     value=650.0)
-    radius = st.slider('Choose radius', min_value=6.0,
+    radius = st.slider('Radius', min_value=6.0,
                     max_value=30.0,
                     value=14.0)
-    perim = st.slider('Choose perimeter', min_value=20.0,
+    perim = st.slider('Perimeter', min_value=20.0,
                     max_value=200.0,
                     value=188.0)
     # Shape
-    smooth = st.slider('Choose smoothness', 
+    smooth = st.slider('Smoothness', 
                        help="A smooth object (low value) will be something like a sphere.",
                        min_value=0.05,
                     max_value=0.1634,
                     value=0.096)
     # Roughness
-    text = st.slider('Choose texture', 
+    text = st.slider('Texture', 
                      help="Imagine something like silk for a low texture value, and a carpet for high texture values.",
                      min_value=9.0,
                     max_value=40.0,
