@@ -63,14 +63,15 @@ with col2:
             prediction = logreg_model.predict(scaled_data)
             probabilities = logreg_model.predict_proba(scaled_data)
             
-            # Display the prediction
+            pred_data = {'Tumor': ['BENIGN', 'MALIGNANT'],
+                    'Probability': [f'{probabilities[0][0]*100:.5f}%', f'{probabilities[0][1]*100:.5f}%']}
+            st.dataframe(pred_data)
+            
             if prediction == 0:
                 st.markdown("The tumor is predicted to be <span style='color: #78ff7f;'>BENIGN</span>.", unsafe_allow_html=True)
             else:
                 st.write("The tumor is predicted to be <span style='color: #f25c6e;'>MALIGNANT</span>.", unsafe_allow_html=True)
-            pred_data = {'Tumor': ['BENIGN', 'MALIGNANT'],
-                    'Probability': [f'{probabilities[0][0]*100:.5f}%', f'{probabilities[0][1]*100:.5f}%']}
-            st.columns([1,8,1])[1].dataframe(pred_data)
+            
             
             
             
