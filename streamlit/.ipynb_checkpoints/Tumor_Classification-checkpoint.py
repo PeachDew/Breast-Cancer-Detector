@@ -60,7 +60,7 @@ with col2:
             
             # Display the prediction
             if prediction == 0:
-                st.write("The tumor is predicted to be benign.")
+                st.markdown("The tumor is predicted to be <h1 style='color: #78ff7f;'>BENIGN</h1>.", unsafe_allow_html=True)
             else:
                 st.write("The tumor is predicted to be malignant.")
             pred_data = {'Tumor': ['BENIGN', 'MALIGNANT'],
