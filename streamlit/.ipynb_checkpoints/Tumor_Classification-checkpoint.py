@@ -64,8 +64,8 @@ with col2:
                 st.write("The tumor is predicted to be benign.")
             else:
                 st.write("The tumor is predicted to be malignant.")
-            st.write(f"Benign Probability: {probabilities[0][0]:.2f}")
-            st.write(f"Malignant Probability: {probabilities[0][1]:.2f}")
+            st.write(f"Benign Probability: {probabilities[0][0]*100:.5f}%")
+            st.write(f"Malignant Probability: {probabilities[0][1]*100:.5f}%")
             
             
             
