@@ -39,11 +39,15 @@ with col1:
                     max_value=200.0,
                     value=188.0)
     # Shape
-    smooth = st.slider('Choose smoothness', min_value=0.05,
+    smooth = st.slider('Choose smoothness', 
+                       label="A smooth object (low value) will be something like a sphere.",
+                       min_value=0.05,
                     max_value=0.1634,
                     value=0.096)
     # Roughness
-    text = st.slider('Choose texture', min_value=9.0,
+    text = st.slider('Choose texture', 
+                     label="Imagine something like silk for a low texture value, and a carpet for high texture values.",
+                     min_value=9.0,
                     max_value=40.0,
                     value=19.0)
     
