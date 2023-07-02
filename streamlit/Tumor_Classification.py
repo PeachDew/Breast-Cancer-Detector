@@ -28,32 +28,34 @@ with open("./models/logreg_model.pkl", "rb") as file:
     
 col1, col2 = st.columns(2)
 with col1:
-    area = st.slider('Choose area', min_value=0.0,
-                    max_value=50.0,
-                    value=25.0)
-    radius = st.slider('Choose radius', min_value=0.0,
-                    max_value=50.0,
-                    value=25.0)
-    perim = st.slider('Choose perimeter', min_value=0.0,
-                    max_value=50.0,
-                    value=25.0)
+    area = st.slider('Choose area', min_value=100.0,
+                    max_value=3000.0,
+                    value=650.0)
+    radius = st.slider('Choose radius', min_value=6.0,
+                    max_value=30.0,
+                    value=14.0)
+    perim = st.slider('Choose perimeter', min_value=20.0,
+                    max_value=200.0,
+                    value=188.0)
     # Shape
-    smooth = st.slider('Choose smoothness', min_value=0.0,
-                    max_value=50.0,
-                    value=25.0)
+    smooth = st.slider('Choose smoothness', min_value=0.05,
+                    max_value=0.1634,
+                    value=0.096)
     # Roughness
-    text = st.slider('Choose texture', min_value=0.0,
-                    max_value=50.0,
-                    value=25.0)
+    text = st.slider('Choose texture', min_value=9.0,
+                    max_value=40.0,
+                    value=19.0)
     
     
 with col2:
     pred_button = st.button('Generate Prediction')
     if pred_button:
         with st.spinner('Wait for it...'):
+            scaler = StandardScaler() 
             data = [[area, text, perim, area, smooth]]
-            prediction = logreg_model.predict(data)
-            probabilities = logreg_model.predict_proba(data)
+            scaled_data = scaler.fit_transform(data)
+            prediction = logreg_model.predict(scaled_data)
+            probabilities = logreg_model.predict_proba(scaled_data)
             
             # Display the prediction
             if prediction == 0:
