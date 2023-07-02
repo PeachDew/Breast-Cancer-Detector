@@ -21,7 +21,7 @@ st.markdown("""
 )
 
 #Load the models
-with open("./models/logreg_model.pickle", "rb") as file:
+with open("./models/logreg_model.pkl", "rb") as file:
     logreg_model = pickle.load(file)
     
        
