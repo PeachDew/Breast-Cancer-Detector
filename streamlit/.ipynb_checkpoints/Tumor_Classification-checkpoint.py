@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score, roc_auc_score
 st.set_page_config(page_title="Tumor Classification")
 
 st.markdown("""
-# Malignant/Benign Tumor Classification using Random Forest
+# Malignant/Benign Tumor Classification using Logistic Regression
 """
 )
 
