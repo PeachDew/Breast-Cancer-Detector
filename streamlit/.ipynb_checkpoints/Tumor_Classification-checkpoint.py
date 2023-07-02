@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pickle
 import pandas as pd
-import joblib
 import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
@@ -22,7 +21,9 @@ st.markdown("""
 )
 
 #Load the models
-rf_model = joblib.load("./models/rf_model.joblib")    
+with open("./models/rf_model.pickle", "rb") as file:
+    rf_model = pickle.load(file)
+    
        
     
 col1, col2 = st.columns(2)
