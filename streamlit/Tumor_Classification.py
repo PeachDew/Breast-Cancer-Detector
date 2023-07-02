@@ -53,7 +53,7 @@ with col1:
     
     
 with col2:
-    pred_button = st.columns(3)[1].button('Generate')
+    pred_button = st.columns([1,4,1])[1].button('Generate')
         
     if pred_button:
         with st.spinner('Wait for it...'):
