@@ -53,7 +53,8 @@ with col1:
     
     
 with col2:
-    pred_button = st.button('Generate Prediction')
+    pred_button = st.columns(3)[1].button('Generate Prediction')
+        
     if pred_button:
         with st.spinner('Wait for it...'):
             data = [[radius, text, perim, area, smooth]]
