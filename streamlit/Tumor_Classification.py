@@ -52,7 +52,7 @@ with col2:
     if pred_button:
         with st.spinner('Wait for it...'):
             scaler = StandardScaler() 
-            data = [[area, text, perim, area, smooth]]
+            data = [[radius, text, perim, area, smooth]]
             st.write(data)
             scaled_data = scaler.fit_transform(data)
             prediction = logreg_model.predict(scaled_data)
