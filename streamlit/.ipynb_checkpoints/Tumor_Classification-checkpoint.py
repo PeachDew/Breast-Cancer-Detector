@@ -21,7 +21,7 @@ st.markdown("""
 )
 
 #Load the models
-with open("./rf_model.pkl", "rb") as file:
+with open("rf_model.pkl", "rb") as file:
     rf_model = pickle.load(file)
        
     
