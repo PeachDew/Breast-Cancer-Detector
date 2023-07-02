@@ -53,7 +53,7 @@ with col1:
     
     
 with col2:
-    pred_button = st.columns(3)[1].button('Generate Prediction')
+    pred_button = st.columns(3)[1].button('Generate')
         
     if pred_button:
         with st.spinner('Wait for it...'):
@@ -70,7 +70,7 @@ with col2:
                 st.write("The tumor is predicted to be <span style='color: #f25c6e;'>MALIGNANT</span>.", unsafe_allow_html=True)
             pred_data = {'Tumor': ['BENIGN', 'MALIGNANT'],
                     'Probability': [f'{probabilities[0][0]*100:.5f}%', f'{probabilities[0][1]*100:.5f}%']}
-            st.dataframe(pred_data)
+            st.columns(3)[1].dataframe(pred_data)
             
             
             
