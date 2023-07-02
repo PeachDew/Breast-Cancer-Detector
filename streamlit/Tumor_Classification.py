@@ -53,6 +53,7 @@ with col2:
         with st.spinner('Wait for it...'):
             scaler = StandardScaler() 
             data = [[area, text, perim, area, smooth]]
+            st.write(data)
             scaled_data = scaler.fit_transform(data)
             prediction = logreg_model.predict(scaled_data)
             probabilities = logreg_model.predict_proba(scaled_data)
