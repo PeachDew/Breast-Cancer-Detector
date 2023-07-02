@@ -26,7 +26,6 @@ This app utilizes machine learning to make predictions based on a Twitter user p
 #    name_model = pickle.load(file)
        
     
-values = [None for i in range(len(col_names))]
 col1, col2 = st.columns(2)
 with col1:
     area = st.slider('Choose area', min_value=0.0,
